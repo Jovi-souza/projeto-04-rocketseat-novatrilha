@@ -1,5 +1,71 @@
+import Image from 'next/image'
+
+import {useKeenSlider} from 'keen-slider/react'
+
+import { HomeContainer, Product } from "../styles/pages/home";
+
+import camiseta1 from '../assets/1.png'
+import camiseta2 from '../assets/2.png'
+import camiseta3 from '../assets/3.png'
+import camiseta4 from '../assets/4.png'
+
+import 'keen-slider/keen-slider.min.css'
 export default function Home() {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 2.7,
+      spacing: 48,
+    }
+  })
   return (
-    <h1>Hello World</h1>
+    <HomeContainer ref={sliderRef} className="keen-slider">
+      <Product className="keen-slider__slide">
+        <Image 
+          src={camiseta1}
+          width={520}
+          height={480}
+          alt="camiseta 1"
+        />
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta2} width={520} height={480} alt="camiseta 2"/>
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta3} width={520} height={480} alt="camiseta 3"/>
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta4} width={520} height={480} alt="camiseta 4"/>
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta4} width={520} height={480} alt="camiseta 4"/>
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta4} width={520} height={480} alt="camiseta 4"/>
+        <footer>
+          <strong>camiseta X</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+    </HomeContainer>
   )
 }
