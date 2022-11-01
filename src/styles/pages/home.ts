@@ -3,11 +3,11 @@ import { styled } from "..";
 export const HomeContainer = styled('div', {
   display: 'flex',
   width: "100%",
-  maxWidth: "calc(100vw - ((100vw - 1180px) /2))",
+  maxWidth: "calc(100vw - ((100vw - 1024px) /2))",
   marginLeft: "auto",
 })
 
-export const Product = styled('a', {
+export const Product = styled('div', {
   background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
   borderRadius: 8,
   padding: '2rem',
@@ -43,7 +43,8 @@ export const Product = styled('a', {
     transition: 'all 0.2s ease-in-out',
     
     strong: {
-      fontSize: "$lg"
+      fontSize: "$lg",
+      color: '$gray100'
     },
 
     span: {
